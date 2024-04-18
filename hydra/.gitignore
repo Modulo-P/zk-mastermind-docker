@@ -1,0 +1,4 @@
+/db*
+/node/node.socket
+/node-1-persistence
+/node-2-persistence

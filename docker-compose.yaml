@@ -1,0 +1,38 @@
+include:
+  - hydra/docker-compose.yaml
+  - kupo/docker-compose.yaml
+
+services:
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: #GENERATE_PASSWORD#
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    networks:
+      - hydra_net
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - hydra_net
+
+  backend:
+    image: backend
+    build: ./backend
+    depends_on:
+      - db
+    ports:
+      - 3004:3004
+    command: sh -c "npx prisma migrate deploy && node dist/index.js"
+    env_file: .backend_env
+    networks:
+      - hydra_net
+    restart: always

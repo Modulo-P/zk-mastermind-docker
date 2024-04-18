@@ -1,0 +1,29 @@
+services:
+  kupo:
+    image: cardanosolutions/kupo:v2.7.2
+    ports:
+      - "1442:1442"
+    command:
+      [
+        "--node-socket",
+        "/node/node.socket",
+        "--host",
+        "0.0.0.0",
+        "--node-config",
+        "/config/cardano-node/config.json",
+        "--workdir",
+        "/db",
+        "--since",
+        "56265902.3f74f8a4f2dc43eb7cbae57c4124d2fe53532862f11f5dfa4631229218d4bb0f",
+        "--defer-db-indexes",
+        "--prune-utxo",
+        "--match",
+        "addr_test1wz0c73j3czfd77gtg58jtm2dz8fz7yrxzylv7dc67kew5tqk4uqc9"
+      ]
+    volumes:
+      - ./db:/db
+      - ./config:/config
+      - ../hydra/node:/node
+    networks:
+      - hydra_net
+    restart: always

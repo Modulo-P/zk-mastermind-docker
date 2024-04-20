@@ -37,10 +37,10 @@ docker compose up -d  --pull always
 echo "
 Please add funds to this address:
 
-Cardano funds 1 address (~1000 tADA): $(cat hydra/credentials/cardano-funds-1.addr)
-Cardano funds 2 address (~100 tADA): $(cat hydra/credentials/cardano-funds-2.addr)
-Cardano node 1 address (~1000 tADA): $(cat hydra/credentials/cardano-node-1.addr)
-Cardano node 2 address (~100 tADA): $(cat hydra/credentials/cardano-node-2.addr)
+1. Cardano node 1 address (~2zz00 tADA): $(cat hydra/credentials/cardano-node-1.addr)
+2. Cardano node 2 address (~200 tADA): $(cat hydra/credentials/cardano-node-2.addr)
+3. Cardano funds 2 address (~200 tADA): $(cat hydra/credentials/cardano-funds-2.addr)
+4. Cardano funds 1 address (~1000 tADA): $(cat hydra/credentials/cardano-funds-1.addr)
 
 Once the funds are in the addresses you can check if the Hydra head is open:
 

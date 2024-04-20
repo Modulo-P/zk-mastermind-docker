@@ -19,6 +19,12 @@ cd ..
 
 ./bootstrap-cardano-db.sh
 
+cd hydra/credentials
+
+./generate-credentials.sh
+
+cd ../..
+
 docker compose build --pull backend
 
 docker compose build --pull frontend

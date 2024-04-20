@@ -18,6 +18,26 @@ You'll need to set up some credentials and password before to deploy the solutio
 
 ## Run
 
+In order to have the solution running you'll need to put funds in the cardano-funds-1, cardano-funds-2, cardano-node-1 and cardano-node-2 address from the credentials directory
+
+When all the credentials and docker files are configured you can start the solution running the following command: 
+
+```
+$ ./run-docker.sh
+```
+
+The first time, you'll need to wait to the cardano node synchronization. Alternatively, you can download the last preprod snapshot with Mithril. Here you have a tutorial from the Hydra team [Tutorial](https://hydra.family/head-protocol/docs/tutorial/).
+
+Once you run the `run-docker.sh`script for the first time you can start and stop the solution with these commands.
+
+```
+# Start all containers
+$ docker compose up -d
+
+# Stop all
+$ docker compose down 
+```
+
 ## Appendix: Dapp repositories
 
 The relevant repositories of the mastermind Dapp are as follows:

@@ -1,28 +1,8 @@
-# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
-
-# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
-
-DATABASE_URL="postgresql://postgres:#GENERATE_PASSWORD#@db:5432/mastermind?schema=public"
 PORT=3004
-
-# Hydra node 1
-
 HYDRA_NODE_1_HOST=hydra-node-1:4001
-
-# Hydra node 2
-
 HYDRA_NODE_2_HOST=hydra-node-2:4001
-
-# Funds wallet
-
-FUNDS_WALLET_PRIVATE_KEY=
-
-MINTING_CONTRACT=
-
-# Blockfrost Project ID
-
-BLOCKFROST_PROJECT_ID=
-
-# Kupo
-
 KUPO_URL=http://kupo:1442
+DATABASE_URL=
+FUNDS_WALLET_PRIVATE_KEY=
+MINTING_CONTRACT=
+BLOCKFROST_PROJECT_ID=

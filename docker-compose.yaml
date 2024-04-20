@@ -9,7 +9,7 @@ services:
       - 5432:5432
     restart: always
     environment:
-      POSTGRES_PASSWORD: #GENERATE_PASSWORD#
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - ./db:/var/lib/postgresql/data

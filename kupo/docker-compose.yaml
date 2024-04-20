@@ -14,11 +14,11 @@ services:
         "--workdir",
         "/db",
         "--since",
-        "56265902.3f74f8a4f2dc43eb7cbae57c4124d2fe53532862f11f5dfa4631229218d4bb0f",
+        "57766300.0a052e64097c167094bf47fa6cac92c5660d1d3a2826cc9a953e465d3385893d",
         "--defer-db-indexes",
         "--prune-utxo",
         "--match",
-        "addr_test1wz0c73j3czfd77gtg58jtm2dz8fz7yrxzylv7dc67kew5tqk4uqc9"
+        "${CARDANO_BRIDGE_ADDRESS}"
       ]
     volumes:
       - ./db:/db

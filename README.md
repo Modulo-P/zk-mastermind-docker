@@ -8,25 +8,13 @@ This repository contains the docker compose files for the infraestructure of the
 
 - Docker 24.0.7 or higher
 
-## Setup
-
-You'll need to set up some credentials and password before to deploy the solution:
-
-1. Create a copy of the `.backend_env.example`as `.backend_env`in the root of the repository.
-2. Set a password for the postgres database. In the file `.backend_env`, you'll need to replace the #GENERATE_PASSWORD# with a secure password and go to the `docker-compose.yaml`file and in the line 12 set this password for the Postgres service.
-3. Go to the file `hydra/credentials/README.md` and follow the instruction to set up the Cardano and Hydra credentials.
-
 ## Run
 
-In order to have the solution running you'll need to put funds in the cardano-funds-1, cardano-funds-2, cardano-node-1 and cardano-node-2 address from the credentials directory
-
-When all the credentials and docker files are configured you can start the solution running the following command: 
+The command `run-docker.sh`take care of al the solution configuration. The current user must be in the docker group [How to add current user to docker group](https://docs.docker.com/engine/install/linux-postinstall/).
 
 ```
 $ ./run-docker.sh
 ```
-
-The first time, you'll need to wait to the cardano node synchronization. Alternatively, you can download the last preprod snapshot with Mithril. Here you have a tutorial from the Hydra team [Tutorial](https://hydra.family/head-protocol/docs/tutorial/).
 
 Once you run the `run-docker.sh`script for the first time you can start and stop the solution with these commands.
 

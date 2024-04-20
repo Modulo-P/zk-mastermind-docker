@@ -35,7 +35,7 @@ docker compose build --pull frontend
 docker compose up -d  --pull always
 
 echo "
-Please add funds to this address:
+Please add funds to these address:
 
 1. Cardano node 1 address (~200 tADA): $(cat hydra/credentials/cardano-node-1.addr)
 2. Cardano node 2 address (~200 tADA): $(cat hydra/credentials/cardano-node-2.addr)

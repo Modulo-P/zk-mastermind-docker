@@ -36,3 +36,15 @@ services:
     networks:
       - hydra_net
     restart: always
+
+  frontend:
+    image: frontend
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - 80:3000
+    env_file: .frontend_env
+    networks:
+      - hydra_net
+    restart: always

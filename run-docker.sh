@@ -11,6 +11,16 @@ cd backend
 
 cd ..
 
+cd frontend
+
+./build-image.sh
+
+cd ..
+
+./bootstrap-cardano-db.sh
+
 docker compose build --pull backend
+
+docker compose build --pull frontend
 
 docker compose up -d  --pull always

@@ -25,7 +25,7 @@ echo "{
     \"type\": \"sig\"
 }" > escrow.script
 ESCROW_ADDRESS=$(cardano-cli address build --payment-script-file escrow.script --testnet-magic 1  | sed "s/\\r//")
-FUNDS_WALLET_PRIVATE_KEY=$(jq -r ".cborHex" cardano-node-1.sk)
+FUNDS_WALLET_PRIVATE_KEY=$(jq -r ".cborHex" cardano-funds-1.sk)
 
 sed "s/#PUBKEY_HASH#/$FUNDS_WALLET_PUB_KEY_HASH/g" minting-contract.template > minting-contract.plutus
 MINTING_CONTRACT=$(jq -r ".cborHex" minting-contract.plutus)

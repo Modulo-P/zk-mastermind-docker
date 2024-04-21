@@ -5,6 +5,15 @@ set -e
 
 echo "Bootstraping ZK Mastermind solution"
 
+./bootstrap-cardano-db.sh
+
+cd hydra/credentials
+
+./generate-credentials.sh
+
+cd ..
+cd ..
+
 docker compose down
 
 cd backend
@@ -17,15 +26,6 @@ cd frontend
 
 ./build-image.sh
 
-cd ..
-
-./bootstrap-cardano-db.sh
-
-cd hydra/credentials
-
-./generate-credentials.sh
-
-cd ..
 cd ..
 
 docker compose build --pull backend

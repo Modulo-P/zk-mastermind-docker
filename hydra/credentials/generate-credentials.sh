@@ -1,7 +1,7 @@
 #! /bin/bash
 
 POSTGRES_PASSWORD=$(tr -dc 'A-Za-z0-9!?%=' < /dev/urandom | head -c 10)
-: '
+
 for CREDENTIAL in cardano-funds-1 cardano-funds-2 cardano-node-1 cardano-node-2
 do
     echo "Generating credentials for $CREDENTIAL"
@@ -16,7 +16,6 @@ do
     --testnet-magic 1
 
 done
-'
 
 FUNDS_WALLET_PUB_KEY_HASH=$(cardano-cli address key-hash --payment-verification-key-file cardano-funds-1.vk)
 FUNDS_WALLET_ADDRESS=$(cardano-cli address build --payment-verification-key-file cardano-funds-1.vk --testnet-magic 1)

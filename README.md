@@ -7,6 +7,7 @@ This repository contains the docker compose files for the infraestructure of the
 ## Prerequisites
 
 - Docker 24.0.7 or higher
+- Cardano CLI
 
 ## Run
 
@@ -23,7 +24,7 @@ Once you run the `run-docker.sh`script for the first time you can start and stop
 $ docker compose up -d
 
 # Stop all
-$ docker compose down 
+$ docker compose down
 ```
 
 ## Appendix: Dapp repositories

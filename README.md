@@ -8,6 +8,7 @@ This repository contains the docker compose files for the infraestructure of the
 
 - Docker 24.0.7 or higher
 - Cardano CLI
+- jq
 
 ## Run
 

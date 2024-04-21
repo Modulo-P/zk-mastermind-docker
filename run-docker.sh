@@ -28,6 +28,8 @@ cd frontend
 
 cd ..
 
+cp .frontend_env frontend/repo/.env
+
 docker compose build --pull backend
 
 docker compose build --pull frontend

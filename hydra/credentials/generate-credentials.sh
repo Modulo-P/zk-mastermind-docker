@@ -17,14 +17,14 @@ do
 
 done
 
-FUNDS_WALLET_PUB_KEY_HASH=$(cardano-cli address key-hash --payment-verification-key-file cardano-funds-1.vk)
-FUNDS_WALLET_ADDRESS=$(cardano-cli address build --payment-verification-key-file cardano-funds-1.vk --testnet-magic 1)
+FUNDS_WALLET_PUB_KEY_HASH=$(cardano-cli address key-hash --payment-verification-key-file cardano-funds-1.vk | sed "s/\\r//")
+FUNDS_WALLET_ADDRESS=$(cardano-cli address build --payment-verification-key-file cardano-funds-1.vk --testnet-magic 1 | sed "s/\\r//" )
 
 echo "{
     \"keyHash\": \"$FUNDS_WALLET_PUB_KEY_HASH\",
     \"type\": \"sig\"
 }" > escrow.script
-ESCROW_ADDRESS=$(cardano-cli address build --payment-script-file escrow.script --testnet-magic 1)
+ESCROW_ADDRESS=$(cardano-cli address build --payment-script-file escrow.script --testnet-magic 1  | sed "s/\\r//")
 FUNDS_WALLET_PRIVATE_KEY=$(jq -r ".cborHex" cardano-node-1.sk)
 
 sed "s/#PUBKEY_HASH#/$FUNDS_WALLET_PUB_KEY_HASH/g" minting-contract.template > minting-contract.plutus

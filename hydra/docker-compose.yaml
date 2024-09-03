@@ -3,7 +3,7 @@ include:
 
 services:
   cardano-node:
-    image: ghcr.io/intersectmbo/cardano-node:8.9.1
+    image: ghcr.io/intersectmbo/cardano-node:9.1.0
     volumes:
       - ./node:/ipc
       - ./db:/data/db
@@ -12,7 +12,7 @@ services:
     restart: always
 
   hydra-node-1:
-    image: ghcr.io/input-output-hk/hydra-node:0.15.0
+    image: ghcr.io/cardano-scaling/hydra-node:0.18.1
     volumes:
       - ./credentials:/credentials:ro
       - ./node:/node
@@ -32,7 +32,7 @@ services:
         "--peer",
         "hydra-node-2:5001",
         "--hydra-scripts-tx-id",
-        "8ce483e2d4b81f9254392afda1f85d1e123165665593228c39064691903f431a",
+        "976b28bc716490fbaa4e17d7bf33b04f27fcfafef58c436c4f2644adeeb48829",
         "--persistence-dir",
         "/persistence",
         "--hydra-signing-key",
@@ -56,7 +56,7 @@ services:
     restart: always
 
   hydra-node-2:
-    image: ghcr.io/input-output-hk/hydra-node:0.15.0
+    image: ghcr.io/cardano-scaling/hydra-node:0.18.1
     volumes:
       - ./credentials:/credentials:ro
       - ./node:/node
@@ -76,7 +76,7 @@ services:
         "--peer",
         "hydra-node-1:5001",
         "--hydra-scripts-tx-id",
-        "8ce483e2d4b81f9254392afda1f85d1e123165665593228c39064691903f431a",
+        "976b28bc716490fbaa4e17d7bf33b04f27fcfafef58c436c4f2644adeeb48829",
         "--persistence-dir",
         "/persistence",
         "--hydra-signing-key",
